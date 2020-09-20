@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const conexao = require('./bd/conexao')
-const Categorias = require('./bd/Categorias')
+const conexao = require('./bd/conexao');
+const Categorias = require('./bd/Categorias');
+const Contatos = require('./bd/Contatos');
 
 const app = express();
 
