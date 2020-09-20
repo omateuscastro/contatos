@@ -1,11 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const conexao = require('./bd/conexao')
+const Categorias = require('./bd/Categorias')
 
 const app = express();
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "ejs");
+
+conexao.authenticate();
 
 app.get("/", function(req, res) {
   res.render("index");
