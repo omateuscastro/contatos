@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const conexao = require('./bd/conexao');
+const Categorias = require('./bd/Categorias');
+const Contatos = require('./bd/Contatos');
 
 const app = express();
 
@@ -7,8 +10,30 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "ejs");
 
+conexao.authenticate();
+
 app.get("/", function(req, res) {
   res.render("index");
+});
+
+app.get("/categorias", function(req, res) {
+  res.render("categorias/categorias");
+});
+
+app.get("/categorias/novo", function(req, res) {
+  let mensagens = [];
+
+  res.render("categorias/novo", { mensagens });
+});
+
+app.get("/contatos", function(req, res) {
+  res.render("contatos/contatos");
+});
+
+app.get("/contatos/novo", function(req, res) {
+  let mensagens = [];
+
+  res.render("contatos/novo", { mensagens });
 });
 
 app.listen(3000);
