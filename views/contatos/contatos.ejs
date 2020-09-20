@@ -10,13 +10,16 @@
 <body>
 	<div class="container">
     <%- include('../partials/navbar'); %>
-    <h3>Categorias cadastradas</h3> <br>
-    <a href="/categorias/novo" class="btn btn-primary">Nova categoria</a>
+    <h3>Contatos cadastrados</h3> <br>
+    <a href="/contatos/novo" class="btn btn-primary">Novo</a>
     <table class="table table-striped">
       <thead> 
         <tr>
           <th>ID</th>
-          <th>Descrição</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Nascimento</th>
+          <th>Categoria</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +28,7 @@
     </table>
 	</div>
 
-	<%- include('partials/footer'); %>
+	<%- include('../partials/footer'); %>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -21,4 +21,14 @@ app.get("/categorias/novo", function(req, res) {
   res.render("categorias/novo", { mensagens });
 });
 
+app.get("/contatos", function(req, res) {
+  res.render("contatos/contatos");
+});
+
+app.get("/contatos/novo", function(req, res) {
+  let mensagens = [];
+
+  res.render("contatos/novo", { mensagens });
+});
+
 app.listen(3000);
