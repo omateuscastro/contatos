@@ -20,20 +20,13 @@
           </div>
           <input type="hidden" name="id"  value="<%=categoria.id%>">
           <input class="btn btn-primary" type="submit" value="Atualizar">
-          <a href="/categorias" class="btn btn-warning"> Lista de categorias</a>
+          <a href="/categorias/lista" class="btn btn-warning"> Lista de categorias</a>
       </form>
      </div> 
     </div>
-    <% if(mensagens.length > 0){ %>
-      <% mensagens.forEach(function(mensagem){ %>
-      <div class="alert alert-info">
-        <strong>Aviso!</strong> <%= mensagem %>
-      </div>
-      <% }); %>
-      <% } %>
 	</div>
 
-	<%- include('partials/footer'); %>
+	<%- include('../partials/footer'); %>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -19,17 +19,15 @@
             <input id="descricao" type="text" name="descricao" class="form-control" placeholder="Informe o nome da categoria." required>
           </div>
           <input class="btn btn-primary" type="submit" value="Salvar">
-          <a href="/categorias" class="btn btn-warning"> Lista de categorias</a>
+          <a href="/categorias/lista" class="btn btn-warning"> Lista de categorias</a>
       </form>
      </div> 
     </div>
-    <% if(mensagens.length > 0){ %>
-      <% mensagens.forEach(function(mensagem){ %>
+    <% if(mensagem){ %>
       <div class="alert alert-info">
-        <strong>Aviso!</strong> <%= mensagem %>
+        <strong>Novo Registro!</strong> <%= mensagem %>
       </div>
-      <% }); %>
-      <% } %>
+    <% } %>
 	</div>
 
 	<%- include('../partials/footer'); %>
