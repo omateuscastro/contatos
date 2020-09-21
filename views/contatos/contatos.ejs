@@ -22,6 +22,7 @@
           <th>E-mail</th>
           <th>Nascimento</th>
           <th>Categoria</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -33,10 +34,9 @@
               <td><%=formataData(contato.nascimento, "BR")%></td>
               <td><%=contato.categoria.descricao%></td>
               <td><a href="/contatos/editar/<%=contato.id%>" class="fas fa-edit" style="color: black"
-                      ata-toggle="tooltip" title="Editar contato."></a></td>
-              <td><a href="/contatos/excluir/<%=contato.id%>" class="fas fa-trash" style="color: black"
-                      ata-toggle="tooltip" title="Excluir contato."
-                      onclick="return confirm('Confirma a exclusão?')"></a></td>
+                      ata-toggle="tooltip" title="Editar contato."></a> <a href="/contatos/excluir/<%=contato.id%>" class="fas fa-trash" style="color: black"
+                        ata-toggle="tooltip" title="Excluir contato."
+                        onclick="return confirm('Confirma a exclusão?')"></a></td>
           </tr>
           <% }) %>
       </tbody>

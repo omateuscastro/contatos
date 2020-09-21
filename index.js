@@ -22,10 +22,10 @@ app.get("/categorias/lista/:mensagem?", function (req, res) {
       .findAll({ order: ["descricao"] }) 
       .then(function (categorias) {
           if(req.params.mensagem)
-              res.render("categorias/categorias", { categorias: categorias,
+              res.render("categorias/categorias", { categorias,
                   mensagem: "Não foi possível, pois já há um contato relacionado a esta categoria."});
           else
-              res.render("categorias/categorias", { categorias: categorias, mensagem: ""});
+              res.render("categorias/categorias", { categorias, mensagem: ""});
       });
 });
 

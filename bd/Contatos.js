@@ -13,6 +13,11 @@ const Contatos = conexao.define('contatos', {
   nascimento: Sequelize.DataTypes.DATEONLY
 });
 
+Categorias.hasMany(Contatos, {
+  onDelete: 'RESTRICT',
+  onUpdate: 'CASCADE'
+})
+
 Contatos.belongsTo(Categorias);
 
 // O parâmetro force, controla se a tabela será recriada mesmo já existindo no banco de dados.
