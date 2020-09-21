@@ -4,7 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Controle de Contatos</title>
-	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,7 +25,20 @@
         </tr>
       </thead>
       <tbody>
-
+        <% contatos.forEach(function(contato){ %>
+          <tr>
+              <td><%=contato.id%></td>
+              <td><%=contato.nome%></td>
+              <td><%=contato.email%></td>
+              <td><%=formataData(contato.nascimento, "BR")%></td>
+              <td><%=contato.categoria.descricao%></td>
+              <td><a href="/contatos/editar/<%=contato.id%>" class="fas fa-edit" style="color: black"
+                      ata-toggle="tooltip" title="Editar contato."></a></td>
+              <td><a href="/contatos/excluir/<%=contato.id%>" class="fas fa-trash" style="color: black"
+                      ata-toggle="tooltip" title="Excluir contato."
+                      onclick="return confirm('Confirma a exclusão?')"></a></td>
+          </tr>
+          <% }) %>
       </tbody>
     </table>
 	</div>
